@@ -1,5 +1,5 @@
-// import express, * as example from 'express';
-import express from 'express';
+import express, * as example from 'express';
+// import express from 'express';
 require('dotenv').config();
 
 const cors = require("cors");
@@ -31,7 +31,7 @@ client.connect((err: any) => {
     const memoCollection = client.db(DB_NAME).collection("memo_gallery");
 
     // Finding all memos
-    app.get('/get-all-memos', (req, res) =>{
+    app.get('/get-memos', (req, res) =>{
         // const search = req.query.search;
         // console.log(search," => ");
         memoCollection.find({})
