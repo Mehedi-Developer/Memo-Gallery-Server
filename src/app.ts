@@ -39,6 +39,7 @@ client.connect((err: any) => {
             // console.log(documents);
             res.send(documents);
         })
+        .catch((err: any) => res.send(err));
     });
 
     // Add memo
