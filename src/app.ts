@@ -17,11 +17,11 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.eynmv.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 // console.log({DB_USER});
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
-// app.get('/', (req: any, res: any) => {
-//     res.send("Hello world")
-// });
+app.get('/', (req: any, res: any) => {
+    res.send("Hello world")
+});
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect((err: any) => {
