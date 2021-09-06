@@ -17,7 +17,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.eynmv.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 // console.log({DB_USER});
 
-app.set("port", 3001);
+const port = 3001;
 
 // app.get('/', (req: any, res: any) => {
 //     res.send("Hello world")
@@ -65,7 +65,6 @@ client.connect((err: any) => {
     });
 });
 
-app.listen(app.get("port"), () => {
-    console.log("server started at http://localhost:" + app.get("port"));
-    
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
 })
