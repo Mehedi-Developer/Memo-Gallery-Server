@@ -19,9 +19,9 @@ const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.eynmv.mongodb.net/
 
 app.set("port", 3001);
 
-app.get('/', (req: any, res: any) => {
-    res.send("Hello world")
-});
+// app.get('/', (req: any, res: any) => {
+//     res.send("Hello world")
+// });
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect((err: any) => {
